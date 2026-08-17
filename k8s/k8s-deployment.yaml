@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-weather-app
+  labels:
+    app: mlops-weather-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mlops-weather-app
+  template:
+    metadata:
+      labels:
+        app: mlops-weather-app
+    spec:
+      containers:
+      - name: weather-prediction-api
+        image: mlops-weather-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+        env:
+        - name: FLASK_ENV
+          value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlops-weather-service
+  labels:
+    app: mlops-weather-app
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    targetPort: 5000
+    nodePort: 30005
+  selector:
+    app: mlops-weather-app

@@ -1,0 +1,44 @@
+2026-08-18 00:39:58,102 - INFO - Model Training Initialized...
+2026-08-18 00:39:58,102 - ERROR - Error While Loading data [Errno 2] No such file or directory: 'preprocessed\\x_train.pkl'
+2026-08-18 02:06:29,960 - INFO - Data Processing Intialized..
+2026-08-18 02:06:30,828 - INFO - Data Loaded Sucesfully..
+2026-08-18 02:06:30,978 - ERROR - Error While preprocesss data 'Date'
+2026-08-18 02:09:40,946 - INFO - Data Processing Intialized..
+2026-08-18 02:09:41,631 - INFO - Dataset columns: ['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm', 'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm', 'RainToday', 'RainTomorrow']
+2026-08-18 02:09:41,631 - INFO - Data Loaded Sucesfully..
+2026-08-18 02:09:41,733 - ERROR - Error While preprocesss data 'Date'
+2026-08-18 02:12:12,221 - INFO - Data Processing Intialized..
+2026-08-18 02:17:11,654 - INFO - Data Processing Intialized..
+2026-08-18 02:17:12,215 - INFO - Dataset columns: ['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm', 'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm', 'RainToday', 'RainTomorrow']
+2026-08-18 02:17:12,215 - INFO - Data Loaded Sucesfully..
+2026-08-18 02:17:12,226 - INFO - Dataset columns: ['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm', 'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm', 'RainToday', 'RainTomorrow']
+2026-08-18 02:17:12,429 - INFO - Basic data processing done...
+2026-08-18 02:17:12,537 - INFO - Error While Label encode data 'DataProcessing' object has no attribute 'label_encoder'
+2026-08-18 02:18:00,993 - INFO - Data Processing Initialized..
+2026-08-18 02:18:01,491 - INFO - Dataset columns: ['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm', 'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm', 'RainToday', 'RainTomorrow']
+2026-08-18 02:18:01,495 - INFO - Data Loaded Successfully..
+2026-08-18 02:18:01,495 - INFO - Dataset columns: ['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm', 'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm', 'RainToday', 'RainTomorrow']
+2026-08-18 02:18:01,711 - INFO - Basic data processing done...
+2026-08-18 02:18:01,786 - INFO - Label Mapping for Location: {'Adelaide': 0, 'Albury': 1, 'AliceSprings': 2, 'BadgerysCreek': 3, 'Ballarat': 4, 'Bendigo': 5, 'Brisbane': 6, 'Cairns': 7, 'Canberra': 8, 'Cobar': 9, 'CoffsHarbour': 10, 'Dartmoor': 11, 'Darwin': 12, 'GoldCoast': 13, 'Hobart': 14, 'Katherine': 15, 'Launceston': 16, 'Melbourne': 17, 'MelbourneAirport': 18, 'Mildura': 19, 'Moree': 20, 'MountGambier': 21, 'MountGinini': 22, 'Nhil': 23, 'NorahHead': 24, 'NorfolkIsland': 25, 'Nuriootpa': 26, 'PearceRAAF': 27, 'Penrith': 28, 'Perth': 29, 'PerthAirport': 30, 'Portland': 31, 'Richmond': 32, 'Sale': 33, 'SalmonGums': 34, 'Sydney': 35, 'SydneyAirport': 36, 'Townsville': 37, 'Tuggeranong': 38, 'Uluru': 39, 'WaggaWagga': 40, 'Walpole': 41, 'Watsonia': 42, 'Williamtown': 43, 'Witchcliffe': 44, 'Wollongong': 45, 'Woomera': 46}
+2026-08-18 02:18:01,828 - INFO - Label Mapping for WindGustDir: {'E': 0, 'ENE': 1, 'ESE': 2, 'N': 3, 'NE': 4, 'NNE': 5, 'NNW': 6, 'NW': 7, 'S': 8, 'SE': 9, 'SSE': 10, 'SSW': 11, 'SW': 12, 'W': 13, 'WNW': 14, 'WSW': 15}
+2026-08-18 02:18:01,866 - INFO - Label Mapping for WindDir9am: {'E': 0, 'ENE': 1, 'ESE': 2, 'N': 3, 'NE': 4, 'NNE': 5, 'NNW': 6, 'NW': 7, 'S': 8, 'SE': 9, 'SSE': 10, 'SSW': 11, 'SW': 12, 'W': 13, 'WNW': 14, 'WSW': 15}
+2026-08-18 02:18:01,900 - INFO - Label Mapping for WindDir3pm: {'E': 0, 'ENE': 1, 'ESE': 2, 'N': 3, 'NE': 4, 'NNE': 5, 'NNW': 6, 'NW': 7, 'S': 8, 'SE': 9, 'SSE': 10, 'SSW': 11, 'SW': 12, 'W': 13, 'WNW': 14, 'WSW': 15}
+2026-08-18 02:18:01,939 - INFO - Label Mapping for RainToday: {'No': 0, 'Yes': 1}
+2026-08-18 02:18:01,978 - INFO - Label Mapping for RainTomorrow: {'No': 0, 'Yes': 1}
+2026-08-18 02:18:01,978 - INFO - Label Encoding Done ....
+2026-08-18 02:18:01,979 - INFO - Features: ['Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation', 'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm', 'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm', 'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am', 'Temp3pm', 'RainToday', 'Year', 'Month', 'Day']
+2026-08-18 02:18:02,269 - INFO - Data split and saved successfully...
+2026-08-18 02:18:02,269 - INFO - Data processing completed successfully.....
+2026-08-18 02:20:49,101 - INFO - Model Training Initialized...
+2026-08-18 02:20:49,132 - INFO - Data Loaded Successfully...
+2026-08-18 02:20:49,153 - INFO - Training data shape: (98968, 24)
+2026-08-18 02:20:49,153 - INFO - Testing data shape: (24742, 24)
+2026-08-18 02:20:49,153 - INFO - Model training started...
+2026-08-18 02:20:50,351 - INFO - Training and Saving of Model Done...
+2026-08-18 02:20:50,465 - INFO - Training Model Score: 0.8985
+2026-08-18 02:20:50,575 - INFO - Accuracy: 0.8631
+2026-08-18 02:20:50,575 - INFO - Precision: 0.8560
+2026-08-18 02:20:50,575 - INFO - Recall: 0.8631
+2026-08-18 02:20:50,577 - INFO - F1-Score: 0.8562
+2026-08-18 02:20:50,577 - INFO - Model Evaluation Done...
+2026-08-18 02:20:50,577 - INFO - Model Training and Evaluation Done...

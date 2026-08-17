@@ -1,30 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Australia Weather Rain Prediction</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia Rain Prediction | MLOps Kubernetes Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="badge">Kubernetes MLOps Vulnerability & Benchmarking Lab</div>
             <h1>Australia Weather Rain Prediction</h1>
-            <form method="post">
-                {% for feature in features %}
-                    <div class="form-group">
-                        <label for="{{ feature }}">{{ feature }}:</label>
-                        <input type="text" name="{{ feature }}" required>
-                    </div>
-                {% endfor %}
-                <button type="submit">Predict</button>
-            </form>
+            <p class="subtitle">Enter meteorological metrics below or load a preset sample to predict whether rain will occur tomorrow.</p>
+        </header>
 
-            {% if prediction is not none %}
-                <div class="prediction-box">
-                    <h2>Prediction: {{ prediction }}</h2>
-                </div>
-            {% endif %}
+        {% if prediction is not none %}
+        <section class="result-banner {% if 'YES' in prediction %}result-yes{% else %}result-no{% endif %}">
+            <div class="result-icon">{% if 'YES' in prediction %}🌧️{% else %}☀️{% endif %}</div>
+            <div class="result-details">
+                <h3>Prediction: {{ prediction }}</h3>
+                {% if probability %}
+                <p>Confidence Level: <strong>{{ probability }}</strong></p>
+                {% endif %}
+            </div>
+        </section>
+        {% endif %}
+
+        <div class="preset-controls">
+            <span>Quick Samples:</span>
+            <button type="button" class="btn-preset" onclick="loadSample('rainy')">Sample: Rainy Day</button>
+            <button type="button" class="btn-preset" onclick="loadSample('sunny')">Sample: Sunny Day</button>
+            <button type="button" class="btn-preset btn-clear" onclick="clearForm()">Clear All</button>
         </div>
-    </body>
+
+        <form method="POST" id="prediction-form" class="card-form">
+            <div class="form-grid">
+                {% for feature in features %}
+                <div class="input-group">
+                    <label for="{{ feature }}">{{ feature }}</label>
+                    <input 
+                        type="number" 
+                        step="any" 
+                        id="{{ feature }}" 
+                        name="{{ feature }}" 
+                        value="{{ form_values.get(feature, '') }}" 
+                        placeholder="e.g. 0.0" 
+                        required
+                    >
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Predict Rain Tomorrow</button>
+            </div>
+        </form>
+
+        <footer class="app-footer">
+            <p>Demonstrating MLOps Pipeline Deployment & CIS Benchmarking (Kube-Bench) + Penetration Testing (Kube-Hunter)</p>
+        </footer>
+    </div>
+
+    <script>
+        const rainySample = {
+            'Location': 2, 'MinTemp': 13.4, 'MaxTemp': 22.9, 'Rainfall': 16.6, 'Evaporation': 4.8, 'Sunshine': 2.3,
+            'WindGustDir': 13, 'WindGustSpeed': 44.0, 'WindDir9am': 13, 'WindDir3pm': 14,
+            'WindSpeed9am': 20.0, 'WindSpeed3pm': 24.0, 'Humidity9am': 88.0, 'Humidity3pm': 72.0,
+            'Pressure9am': 1007.7, 'Pressure3pm': 1007.1, 'Cloud9am': 8.0, 'Cloud3pm': 7.0, 'Temp9am': 16.9,
+            'Temp3pm': 21.8, 'RainToday': 1, 'Year': 2026, 'Month': 8, 'Day': 18
+        };
+
+        const sunnySample = {
+            'Location': 2, 'MinTemp': 8.2, 'MaxTemp': 26.5, 'Rainfall': 0.0, 'Evaporation': 6.2, 'Sunshine': 11.5,
+            'WindGustDir': 4, 'WindGustSpeed': 24.0, 'WindDir9am': 3, 'WindDir3pm': 5,
+            'WindSpeed9am': 9.0, 'WindSpeed3pm': 13.0, 'Humidity9am': 45.0, 'Humidity3pm': 28.0,
+            'Pressure9am': 1022.0, 'Pressure3pm': 1018.5, 'Cloud9am': 1.0, 'Cloud3pm': 1.0, 'Temp9am': 14.5,
+            'Temp3pm': 25.1, 'RainToday': 0, 'Year': 2026, 'Month': 8, 'Day': 18
+        };
+
+        function loadSample(type) {
+            const data = type === 'rainy' ? rainySample : sunnySample;
+            for (const [key, value] of Object.entries(data)) {
+                const el = document.getElementById(key);
+                if (el) el.value = value;
+            }
+        }
+
+        function clearForm() {
+            const inputs = document.querySelectorAll('#prediction-form input');
+            inputs.forEach(input => input.value = '');
+        }
+    </script>
+</body>
 </html>
