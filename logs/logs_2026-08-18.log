@@ -42,3 +42,19 @@
 2026-08-18 02:20:50,577 - INFO - F1-Score: 0.8562
 2026-08-18 02:20:50,577 - INFO - Model Evaluation Done...
 2026-08-18 02:20:50,577 - INFO - Model Training and Evaluation Done...
+2026-08-18 02:36:51,380 - INFO - DataProcessing initialized with input: Data/Data.csv, output: artifacts
+2026-08-18 02:36:51,846 - INFO - Data loaded successfully. Shape: (145460, 23)
+2026-08-18 02:36:52,013 - INFO - Basic data preprocessing and imputation completed.
+2026-08-18 02:36:52,308 - INFO - Categorical features label encoded and encoders saved.
+2026-08-18 02:36:52,382 - INFO - Data split saved to artifacts. Train: (98968, 24), Test: (24742, 24)
+2026-08-18 02:36:52,385 - INFO - DataProcessing pipeline executed successfully.
+2026-08-18 02:37:54,234 - INFO - ModelTraining initialized with input: artifacts, output: artifacts
+2026-08-18 02:37:54,259 - INFO - Data loaded successfully for model training.
+2026-08-18 02:37:54,259 - INFO - Model training started...
+2026-08-18 02:37:54,867 - INFO - Trained model saved to artifacts\model.pkl
+2026-08-18 02:37:54,942 - INFO - Training Model Score: 0.8985
+2026-08-18 02:37:54,988 - INFO - Test Accuracy:  0.8631
+2026-08-18 02:37:54,988 - INFO - Test Precision: 0.8560
+2026-08-18 02:37:54,988 - INFO - Test Recall:    0.8631
+2026-08-18 02:37:54,988 - INFO - Test F1-Score:  0.8562
+2026-08-18 02:37:54,989 - INFO - Model training and evaluation pipeline completed successfully.
